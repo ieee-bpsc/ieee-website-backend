@@ -4,7 +4,13 @@
 
 1. Clone the repository
 
-2. Create and activate a virtual environment
+2. Copy the `.env.example` file to `.env`.
+
+```bash
+cp .env.example .env
+```
+
+3. Create and activate a virtual environment
 
 ```bash
 python -m venv env
@@ -12,21 +18,23 @@ python -m venv env
 source env/bin/activate # Linux
 ```
 
-3. Install the dependencies
+4. Install the dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Make migrations
+5. Make migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-5. Run the server
+6. Run the server
 
 ```bash
 python manage.py runserver
 ```
+
+The server will be available at `http://localhost:8000`.
