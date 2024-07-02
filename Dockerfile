@@ -13,11 +13,10 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN python manage.py makemigrations \
-    && python manage.py migrate
-
 EXPOSE 8000
 
 VOLUME ["/app/db.sqlite3"]
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["sh", "entrypoint.sh"]
